@@ -19,7 +19,8 @@ st.markdown("<h1 style='text-align: center'>Examining Depression Using Health Ca
 # Putting in personal details with some styling
 st.markdown("<div style='text-align: center'> <b>Ying Yang</b><hr style='height:2px;border-width:0;color:gray;background-color:gray'></body>", unsafe_allow_html=True)
 # Inserting image
-image = Image.open('stethoscope.jpg')
+BASE_DIR = Path(__file__).parent
+image = Image.open(BASE_DIR / "stethoscope.jpg")
 st.image(image, width="stretch")
 
 # Project information
@@ -31,7 +32,6 @@ st.markdown(
     "This dashboard provides an interactive tool for users to explore more of the data from the machine learning project. These plots are interactive with hover text and zooming capabilities. The figures may take a moment to update when changed.<hr style='height:2px;border-width:0;color:gray;background-color:gray'>", unsafe_allow_html=True)
 
 # Add the data
-BASE_DIR = Path(__file__).parent
 df = pd.read_csv(BASE_DIR / "StreamlitData.csv")
 
 # Creating a list of numerical columns
